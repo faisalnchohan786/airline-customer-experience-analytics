@@ -1,0 +1,30 @@
+CREATE EXTERNAL TABLE IF NOT EXISTS airline_cx_analytics.customer_journey (
+    journey_id STRING,
+    customer_id STRING,
+    survey_date DATE,
+    flight_date DATE,
+    flight_number STRING,
+    origin_airport STRING,
+    destination_airport STRING,
+    route STRING,
+    cabin_class STRING,
+    passenger_type STRING,
+    booking_channel STRING,
+    journey_type STRING,
+    connection_time_minutes INT,
+    disruption_flag INT,
+    delay_minutes INT,
+    baggage_issue_flag INT,
+    check_in_issue_flag INT,
+    boarding_issue_flag INT,
+    cabin_service_score INT,
+    airport_experience_score INT,
+    digital_experience_score INT,
+    baggage_experience_score INT,
+    staff_service_score INT,
+    overall_satisfaction_score INT,
+    recommendation_score INT,
+    complaint_flag INT
+)
+STORED AS PARQUET
+LOCATION 's3://airline-cx-analytics-2026-786/data/customer_journey/';
