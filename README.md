@@ -208,7 +208,7 @@ The executive presentation summarises the business problem, analytical approach,
 
 #### 6. Executive Recommendations & Action Plan
 
-![Executive Recommendations and Action Plan](docs/dashboard_screenshots/6-executive-recommendations-action-plan.png)
+![Executive Recommendations and Action Plan](docs/dashboard_screenshots/6-executive-recommendations.png)
 
 *Note: GitHub displays the PNG previews directly. Open the `.pbix` file in Power BI Desktop to explore interactive filters and visuals.*
 
