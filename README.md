@@ -71,7 +71,7 @@ The architecture below illustrates the implemented workflow at a high level, tog
 | Reporting | Power BI | Present customer-experience KPIs, trends and comparisons |
 | Business outputs | Dashboards and presentation | Communicate findings and recommendations |
 
-**AWS Glue Data Catalog:** Document its role here once the catalog and tables used by the project have been confirmed. Athena commonly uses catalog metadata to identify tables and schemas, but the precise configuration should reflect your actual AWS setup.
+**AWS Glue Data Catalog:** The role and configuration of the catalog should be documented according to the actual AWS setup. Athena commonly uses catalog metadata to identify tables and schemas, but the precise configuration should be verified.
 
 The implemented components are Amazon S3 storage, Athena SQL analysis and Python-based analytical work. Any additional automation, curated-data publishing or direct Power BI-to-AWS integration should be documented separately if implemented.
 
@@ -168,7 +168,7 @@ These findings describe patterns in synthetic data. They do not establish causat
 
 ## 📊 Power BI Dashboard
 
-The Power BI report contains five analytical pages.
+The Power BI report contains **six analytical pages** designed to help stakeholders explore passenger satisfaction, operational disruptions, customer complaints, service recovery and route performance.
 
 | Dashboard page | Focus | Business question |
 |---|---|---|
@@ -177,13 +177,40 @@ The Power BI report contains five analytical pages.
 | Customer Complaints & Service Recovery | Complaints and service cases | Where should customer-service teams investigate further? |
 | Passenger Experience & Segmentation | Passenger and service segments | How do customer outcomes vary across available segments? |
 | Route Performance & Customer Impact | Route comparisons | Which routes warrant additional investigation? |
+| Executive Recommendations & Action Plan | Priorities and recommended actions | Which improvement opportunities should be prioritised? |
 
 The executive presentation summarises the business problem, analytical approach, findings, recommendations and action plan.
 
 - **Power BI report:** [`powerbi/Airline_Customer_Experience_Analytics.pbix`](powerbi/Airline_Customer_Experience_Analytics.pbix)
 - **Executive presentation:** [`presentation/Airline_Customer_Experience_Analytics.pptx`](presentation/Airline_Customer_Experience_Analytics.pptx)
 
-The `.pbix` file can be opened using Power BI Desktop. GitHub stores the report file but does not render it as an interactive Power BI dashboard.
+### Dashboard Preview
+
+#### 1. Executive Overview
+
+![Executive Overview](docs/dashboard_screenshots/1-executive-overview.png)
+
+#### 2. Flight Disruption & Delay Analysis
+
+![Flight Disruption and Delay Analysis](docs/dashboard_screenshots/2-flight-disruption-delay.png)
+
+#### 3. Customer Complaints & Service Recovery
+
+![Customer Complaints and Service Recovery](docs/dashboard_screenshots/3-customer-complaints-service-recovery.png)
+
+#### 4. Passenger Experience & Segmentation
+
+![Passenger Experience and Segmentation](docs/dashboard_screenshots/4-passenger-experience-segmentation.png)
+
+#### 5. Route Performance & Customer Impact
+
+![Route Performance and Customer Impact](docs/dashboard_screenshots/5-route-performance-customer-impact.png)
+
+#### 6. Executive Recommendations & Action Plan
+
+![Executive Recommendations and Action Plan](docs/dashboard_screenshots/6-executive-recommendations-action-plan.png)
+
+*Note: GitHub displays the PNG previews directly. Open the `.pbix` file in Power BI Desktop to explore interactive filters and visuals.*
 
 ## 🐍 Python Analytics
 
@@ -342,7 +369,16 @@ airline-customer-experience-analytics/
 ├── README.md
 ├── docs/
 │   ├── README.md
-│   └── data-model.png
+│   ├── aws-data-pipeline.png
+│   ├── data-model.png
+│   └── dashboard_screenshots/
+│       ├── README.md
+│       ├── 1-executive-overview.png
+│       ├── 2-flight-disruption-delay.png
+│       ├── 3-customer-complaints-service-recovery.png
+│       ├── 4-passenger-experience-segmentation.png
+│       ├── 5-route-performance-customer-impact.png
+│       └── 6-executive-recommendations-action-plan.png
 ├── powerbi/
 │   ├── README.md
 │   └── Airline_Customer_Experience_Analytics.pbix
