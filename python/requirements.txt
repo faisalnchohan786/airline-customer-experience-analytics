@@ -1,7 +1,7 @@
 # Airline Customer Experience Analytics
 # Python 3.13 compatible baseline where available.
 # Install from your VS Code project root with:
-#   py -m pip install -r requirements.txt
+#   py -m pip install -r python/requirements.txt
 
 # Data loading and manipulation
 pandas
