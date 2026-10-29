@@ -67,6 +67,11 @@ flowchart TD
     G --> H["Interactive Dashboards"]
     H --> I["Business Insights and Recommendations"]
 ```
+AWS Data Pipeline Architecture Infographic.png
+
+![AWS Data Pipeline Architecture](docs/AWS Data Pipeline Architecture Infographic.png)
+
+[View the full-size AWS data pipeline diagram](docs/AWS Data Pipeline Architecture Infographic.png)
 
 ### Pipeline Components
 
