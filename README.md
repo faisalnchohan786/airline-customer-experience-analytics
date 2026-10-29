@@ -1,28 +1,28 @@
 # ✈️ Airline Customer Experience Analytics
 
-**End-to-End Business Intelligence | Data Modelling | Python | SQL | Power BI | AWS**
+**End-to-End Analytics | AWS | SQL | Python | Power BI | Data Modelling**
 
-An end-to-end analytics portfolio project investigating passenger satisfaction, flight delays, disruptions, complaints, service recovery and route performance. The project demonstrates how operational data can be transformed into validated analytical outputs, business intelligence metrics and actionable recommendations.
+An end-to-end analytics portfolio project investigating passenger satisfaction, flight delays, disruptions, complaints, service recovery and route performance. The project combines cloud-based data storage, SQL analysis, Python-based analytics, Power BI data modelling and business intelligence reporting.
 
-> **Data disclaimer:** This project uses synthetic passenger and operational data for portfolio and analytical demonstration. The results do not represent actual airline performance.
+> **Data disclaimer:** This project uses synthetic passenger and operational datasets for portfolio and analytical demonstration. Results do not represent actual airline performance.
 
 ## 📌 Project Overview
 
 Airlines need to understand where customer experience deteriorates, which operational issues are associated with complaints, and where service improvements may have the greatest impact.
 
-This project analyses 50,000 synthetic passenger journeys covering **1 July 2025 to 30 June 2026**. It combines data inspection, validation, Python-based statistical analysis, SQL investigations, Power BI data modelling, KPI development and interactive dashboard reporting.
+This project analyses 50,000 synthetic passenger journeys covering **1 July 2025 to 30 June 2026**. It demonstrates how datasets can be stored in the cloud, queried using SQL, analysed with Python and presented through interactive Power BI dashboards.
 
-The objective is to demonstrate an analytical workflow from source data and data preparation through dimensional modelling and reporting to business recommendations.
+The project focuses on transforming data into meaningful KPIs, investigating relationships between operational performance and customer outcomes, and translating analytical findings into business recommendations.
 
 ## 🎯 Business Objectives
 
 - Measure passenger satisfaction, complaint rates and disruption rates.
-- Investigate the relationship between delay severity and customer outcomes.
-- Analyse baggage issues and their association with complaints.
+- Investigate how delay severity relates to customer satisfaction and complaints.
+- Analyse baggage issues and their association with passenger outcomes.
 - Evaluate service-case status, resolution duration and compensation.
 - Compare customer outcomes across passenger segments and routes.
 - Develop consistent KPIs and actionable operational recommendations.
-- Design a scalable cloud analytics pipeline using Amazon S3, AWS Glue Data Catalog and Amazon Athena.
+- Demonstrate a cloud-based analytical workflow using Amazon S3, Amazon Athena, Python and Power BI.
 
 ## 📊 Dataset Overview
 
@@ -37,49 +37,51 @@ The project uses four synthetic datasets.
 
 **Reporting period:** July 2025 – June 2026.
 
-The datasets support descriptive analytics, KPI development, statistical investigation and interactive reporting.
+The datasets support data-quality assessment, descriptive analytics, statistical investigation, KPI development and interactive reporting.
 
-All records are synthetic. The analysis should not be interpreted as evidence of actual airline or passenger performance.
+All records are synthetic and should not be interpreted as actual airline or passenger performance.
 
 ## 🏗️ Solution Architecture
 
-The analytical solution is organised into four layers:
+The project follows an analytical workflow across four main layers:
 
-1. **Source data:** Passenger journeys, airport reference data, flight schedules and service cases.
-2. **Data preparation:** Inspection, validation, cleaning, key matching and analytical preparation.
-3. **Analytics and modelling:** Python analysis, SQL investigations, dimensional modelling and KPI definitions.
-4. **Business intelligence:** Power BI dashboards, executive reporting and operational recommendations.
+1. **Data sources:** Passenger journeys, airport reference data, flight schedules and service cases.
+2. **Cloud storage and SQL processing:** Source datasets are stored in Amazon S3 and queried using Amazon Athena.
+3. **Analytics and modelling:** Python supports data inspection, validation, statistical analysis and analytical preparation.
+4. **Business intelligence:** Power BI presents KPIs, trends, comparisons and business recommendations.
 
-### Proposed AWS data pipeline
+### AWS Data Pipeline Architecture
 
-The target cloud architecture uses AWS services to provide a structured workflow for data ingestion, metadata management, SQL processing and reporting.
+The project uses Amazon S3 for cloud data storage and Amazon Athena for SQL-based data analysis. Python is used for further data processing and analytical investigation.
+
+The architecture below illustrates the implemented workflow at a high level, together with the reporting layer.
 
 ```mermaid
 flowchart TD
-    A["Synthetic Source Datasets"] --> B["Amazon S3 - Raw Layer"]
-    B --> C["AWS Glue Data Catalog"]
-    C --> D["Amazon Athena"]
-    D --> E["SQL Transformations and Data Quality"]
-    E --> F["Amazon S3 - Curated Layer"]
+    A["Synthetic Source Datasets"] --> B["Amazon S3 - Raw Data"]
+    B --> C["Amazon Athena"]
+    C --> D["SQL Queries and Analysis"]
+    D --> E["Python Data Processing and Analytics"]
+    E --> F["Analytical Outputs"]
     F --> G["Power BI Semantic Model"]
     G --> H["Interactive Dashboards"]
     H --> I["Business Insights and Recommendations"]
 ```
 
-### Pipeline components
+### Pipeline Components
 
 | Layer | Technology | Responsibility |
 |---|---|---|
-| Source | CSV / Excel datasets | Supply journey, airport, schedule and service-case data |
-| Raw storage | Amazon S3 | Store source files in a structured raw-data location |
-| Metadata | AWS Glue Data Catalog | Maintain table schemas, columns and storage metadata |
-| Query processing | Amazon Athena | Execute SQL queries against data stored in S3 |
-| Curated storage | Amazon S3 | Store validated, transformed analytical outputs |
-| Reporting | Power BI | Present KPIs, trends, comparisons and recommendations |
+| Source data | CSV / Excel datasets | Supply journey, airport, schedule and service-case data |
+| Cloud storage | Amazon S3 | Store source datasets in the cloud |
+| SQL processing | Amazon Athena | Query cloud-hosted data and perform SQL-based analysis |
+| Data analysis | Python | Inspect, validate, process and analyse data |
+| Reporting | Power BI | Present customer-experience KPIs, trends and comparisons |
+| Business outputs | Dashboards and presentation | Communicate findings and recommendations |
 
-The intended design separates raw source data from curated analytical outputs. Data-quality checks should be applied before curated datasets are made available to reporting.
+**AWS Glue Data Catalog:** Document its role here once the catalog and tables used by the project have been confirmed. Athena commonly uses catalog metadata to identify tables and schemas, but the precise configuration should reflect your actual AWS setup.
 
-**Implementation status:** This is the proposed AWS architecture. S3 ingestion, Glue catalog configuration, Athena execution, curated outputs and Power BI integration must be verified before being described as implemented.
+The implemented components are Amazon S3 storage, Athena SQL analysis and Python-based analytical work. Any additional automation, curated-data publishing or direct Power BI-to-AWS integration should be documented separately if implemented.
 
 ## 🧩 Power BI Data Modelling
 
@@ -87,68 +89,54 @@ The Power BI report contains a multi-table analytical model that organises passe
 
 The model separates journey-level and service-case-level facts from descriptive dimensions, supporting structured filtering, KPI calculations and business analysis.
 
-### Fact tables
+### Fact Tables
 
 | Table | Purpose |
 |---|---|
-| `fact_customer_journey` | Contains passenger journey attributes, satisfaction scores, delay minutes, disruption and complaint indicators, and service-experience metrics. |
-| `fact_service_case` | Contains service-case information, including case type, status, resolution duration and compensation indicators. |
+| `fact_customer_journey` | Contains passenger journey attributes, satisfaction scores, delay minutes, disruption and complaint indicators, and service-experience metrics |
+| `fact_service_case` | Contains service-case information, including case type, status, resolution duration and compensation indicators |
 
-### Dimension tables
-
-| Table | Purpose |
-|---|---|
-| `dim_date` | Provides calendar attributes for date filtering and time-series analysis. |
-| `dim_journey` | Provides journey identifiers for linking journey-related records. |
-| `dim_flight_schedule` | Contains flight numbers, schedule dates, routes, scheduled departure and arrival times, and other schedule attributes. |
-| `dim_route` | Provides route identifiers and origin/destination combinations for route-level analysis. |
-| `dim_origin_airport` | Provides descriptive attributes for origin airports. |
-| `dim_destination_airport` | Provides descriptive attributes for destination airports. |
-
-### Business action table
+### Dimension Tables
 
 | Table | Purpose |
 |---|---|
-| `executive_action_plan` | Organises findings into priorities, recommended actions, review frequency and success metrics. |
+| `dim_date` | Provides calendar attributes for date filtering and time-series analysis |
+| `dim_journey` | Provides journey identifiers for linking journey-related records |
+| `dim_flight_schedule` | Contains flight numbers, schedule dates, routes and scheduled departure and arrival times |
+| `dim_route` | Provides route identifiers and origin/destination combinations |
+| `dim_origin_airport` | Provides descriptive attributes for origin airports |
+| `dim_destination_airport` | Provides descriptive attributes for destination airports |
 
-These table names reflect the Power BI Model view shared for this project.
+### Business Action Table
 
-### Power BI Relationship Model
+| Table | Purpose |
+|---|---|
+| `executive_action_plan` | Organises findings into priorities, recommended actions, review frequency and success metrics |
 
-The Power BI semantic model organises passenger journeys, service cases, flight schedules, routes, airports and reporting dates into a connected analytical structure.
+These table names reflect the Power BI Model view for this project.
 
-The model includes the following tables:
+### Power BI Relationship Diagram
 
-- **Fact tables:** `fact_customer_journey`, `fact_service_case`
-- **Dimensions:** `dim_date`, `dim_journey`, `dim_flight_schedule`, `dim_route`, `dim_origin_airport`, `dim_destination_airport`
-- **Business action table:** `executive_action_plan`
+The model connects journey records with reporting dates, flight schedules, routes, airport dimensions and service-case data.
 
-The relationship design supports time-based analysis, airport and route comparisons, flight analysis, customer-experience KPIs and service-case reporting.
+![Power BI data model](docs/data-model.png)
 
-Key modelling considerations include:
+[View the full-size Power BI data model](docs/data-model.png)
 
-- Validate primary and foreign keys before establishing relationships.
-- Confirm relationship cardinality and cross-filter direction in Power BI Model view.
-- Keep journey-level and service-case-level measures at their correct grains.
-- Avoid double-counting passenger journeys when multiple service cases relate to one journey.
-- Investigate unmatched flight and route records before interpreting route-level results.
-
-The diagram below is a conceptual overview. Refer to the actual Power BI Model view for the implemented join columns, relationship cardinalities and filter directions.
-
-### Data modelling principles
+### Data Modelling Principles
 
 - **Define table grain:** Identify what one record represents in each fact and dimension table.
-- **Validate keys:** Check uniqueness and referential integrity before creating relationships.
+- **Validate keys:** Check uniqueness and referential integrity before establishing relationships.
 - **Use a date dimension:** Support consistent daily, monthly, quarterly and yearly analysis.
-- **Separate airport roles:** Use origin and destination airport dimensions for the respective airport attributes.
+- **Separate airport roles:** Use origin and destination airport dimensions for their respective airport attributes.
 - **Maintain route consistency:** Use validated route keys for route-level comparisons.
 - **Prevent double-counting:** Keep journey-level and service-case-level measures at their respective grains.
 - **Validate relationships:** Review join columns, cardinality and filter direction in Power BI Model view.
 - **Investigate unmatched records:** Validate flight and route matching before interpreting route-level results.
 
-The precise relationship definitions and cardinalities should be documented from the implemented model rather than inferred from table names alone.
+The exact join columns, relationship cardinalities and cross-filter directions should be documented from the actual Power BI model.
 
-### Power BI semantic model and measures
+### Power BI Semantic Model and Measures
 
 The report includes measures and analytical fields covering:
 
@@ -228,18 +216,16 @@ The scripts cover:
 - Git
 - The required synthetic source datasets
 - Power BI Desktop for opening the report
-- A compatible SQL execution environment for the SQL scripts
+- Access to a compatible SQL execution environment
 
-### Step 1 — Clone the repository
-
-Run from a terminal:
+### Step 1 — Clone the Repository
 
 ```bash
 git clone https://github.com/faisalnchohan786/airline-customer-experience-analytics.git
 cd airline-customer-experience-analytics
 ```
 
-### Step 2 — Create a virtual environment
+### Step 2 — Create a Virtual Environment
 
 On Windows:
 
@@ -247,29 +233,29 @@ On Windows:
 py -m venv .venv
 ```
 
-Activate the environment using PowerShell:
+Activate it using PowerShell:
 
 ```powershell
 .venv\Scripts\Activate.ps1
 ```
 
-### Step 3 — Install dependencies
+### Step 3 — Install Dependencies
 
-From the repository root:
+Run from the repository root:
 
 ```bash
 py -m pip install -r python/requirements.txt
 ```
 
-Use a Python version compatible with the dependencies in `python/requirements.txt`. Python 3.13 compatibility should be verified against the actual packages and scripts.
+Use a Python version compatible with the packages listed in `python/requirements.txt`. Python 3.13 compatibility should be verified against the actual dependencies.
 
-### Step 4 — Prepare the data
+### Step 4 — Prepare the Data
 
 Place the source datasets in the locations expected by the scripts. Review the data paths and configuration in the relevant Python files before execution.
 
-Source datasets do not need to be committed to the public repository if they are large or unnecessary for reviewing the code. Any shared datasets must be synthetic or otherwise authorised for publication.
+The source datasets do not need to be committed to the public repository if they are large or unnecessary for reviewing the code. Any shared datasets must be synthetic or otherwise authorised for publication.
 
-### Step 5 — Run data-quality checks
+### Step 5 — Run Data-Quality Checks
 
 The following are example commands. They assume the scripts support direct execution from the repository root and that their input paths have been configured correctly.
 
@@ -279,7 +265,7 @@ py python/data_validation.py
 py python/run_data_quality.py
 ```
 
-### Step 6 — Run analytical scripts
+### Step 6 — Run Analytical Scripts
 
 For example:
 
@@ -289,7 +275,7 @@ py python/02_delay_analysis.py
 py python/03_complaint_analysis.py
 ```
 
-Review the expected inputs, outputs and configuration for each script before execution. These commands should be tested in a clean environment before the project is described as fully reproducible.
+Review each script's expected inputs, outputs and configuration before execution. Test the commands in a clean environment before describing the project as fully reproducible.
 
 ## 🗄️ SQL Analytics
 
@@ -304,35 +290,24 @@ The `sql/` directory contains scripts for structured analytical investigations, 
 - Complaint-risk investigation
 - Monthly trends and route performance
 
-Execute the scripts in a compatible SQL environment. If using Amazon Athena, configure the relevant database, Glue Data Catalog tables and S3 locations first. Verify table names, column names and SQL compatibility before running queries.
+The SQL scripts can be executed in a compatible SQL environment. For Athena-based execution, confirm that the required database, tables, schemas and S3 locations are configured correctly.
 
-**Note:** Publishing SQL scripts to GitHub does not establish that they have been executed in Athena.
+The repository includes SQL scripts for analytical investigation; their publication does not by itself establish that every query has been executed successfully.
 
-## ☁️ AWS Implementation Roadmap
+## ☁️ AWS Implementation and Future Enhancements
 
-The proposed AWS implementation consists of the following stages:
+The project has implemented cloud storage using Amazon S3 and SQL-based analysis using Amazon Athena, with Python used for further data processing and analytical investigation.
 
-1. **Create S3 storage:** Establish raw and curated data locations with appropriate access controls.
-2. **Upload source datasets:** Store the source files using a documented folder structure and file format.
-3. **Register schemas:** Configure Glue Data Catalog databases and tables.
-4. **Validate source data:** Check schemas, nulls, duplicate keys, data types and referential integrity.
-5. **Query with Athena:** Execute SQL investigations and transformation queries.
-6. **Publish curated outputs:** Store validated analytical datasets in S3, using formats such as Parquet where appropriate.
-7. **Connect Power BI:** Configure a supported connection to the validated analytical outputs.
-8. **Operationalise:** Introduce refresh procedures, logging, monitoring, permissions and query-cost controls.
+The following enhancements can extend the workflow:
 
-### AWS status tracker
+1. **Glue Data Catalog:** Document and validate catalog databases, tables and schemas where applicable.
+2. **Curated data layer:** Publish validated analytical outputs to S3 in a query-efficient format such as Parquet.
+3. **Data-quality controls:** Add repeatable checks for missing values, duplicate keys, data types and referential integrity.
+4. **Power BI integration:** Configure and test a supported connection to curated analytical outputs if direct cloud reporting is required.
+5. **Operational monitoring:** Introduce logging, refresh procedures, access controls and query-cost management.
+6. **Automation:** Evaluate scheduled processing once the manual workflow is stable.
 
-| Component | Status |
-|---|---|
-| Amazon S3 raw-data storage | Planned until verified |
-| AWS Glue Data Catalog | Planned until verified |
-| Amazon Athena queries | Planned until verified |
-| Curated S3 datasets | Planned until verified |
-| Power BI integration with AWS outputs | Planned until verified |
-| Automated refresh and monitoring | Future enhancement |
-
-Update the status of each component as implementation and testing are completed.
+These enhancements should be marked as completed only after implementation and testing.
 
 ## 💼 Business Recommendations
 
@@ -355,13 +330,13 @@ These recommendations are hypotheses for further investigation, not evidence tha
 - Unresolved service cases require careful treatment in resolution-time calculations.
 - Multiple service cases may relate to one journey, so table grain must be respected.
 - Descriptive associations do not prove causation.
-- AWS components must be verified before being described as deployed.
 - Python execution commands and source paths must be tested for reproducibility.
+- AWS capabilities beyond the confirmed S3, Athena and Python workflow should be documented according to their actual implementation status.
 
 ## 🚀 Future Enhancements
 
-- Implement and test the S3–Glue–Athena pipeline.
-- Publish validated, curated datasets for downstream reporting.
+- Document the actual AWS configuration, database, tables and query workflow.
+- Extend the S3–Athena workflow with validated curated datasets.
 - Document the exact Power BI relationships, join keys and DAX measures.
 - Add automated data-quality checks and reproducible analytical outputs.
 - Include dashboard screenshots for recruiters who cannot open Power BI Desktop.
@@ -373,6 +348,9 @@ These recommendations are hypotheses for further investigation, not evidence tha
 ```text
 airline-customer-experience-analytics/
 ├── README.md
+├── docs/
+│   ├── README.md
+│   └── data-model.png
 ├── powerbi/
 │   ├── README.md
 │   └── Airline_Customer_Experience_Analytics.pbix
@@ -390,15 +368,16 @@ airline-customer-experience-analytics/
 
 ## 🧰 Technologies
 
-- **Programming and analysis:** Python, pandas, NumPy
-- **Statistics and modelling:** SciPy, statsmodels, scikit-learn
-- **Querying:** SQL
-- **Business intelligence:** Power BI, DAX, Power Query
-- **Cloud architecture:** Amazon S3, AWS Glue Data Catalog and Amazon Athena — planned unless implementation is documented
+- **Cloud storage:** Amazon S3
+- **SQL analytics:** Amazon Athena and SQL
+- **Programming and analysis:** Python, pandas and NumPy
+- **Statistics and modelling:** SciPy, statsmodels and scikit-learn
+- **Business intelligence:** Power BI, DAX and Power Query
+- **Data modelling:** Fact tables, dimension tables and analytical relationships
 
 ## 👤 Project Purpose
 
-This independent portfolio project demonstrates the application of data preparation, dimensional modelling, statistical investigation and business intelligence to a customer-experience problem.
+This independent portfolio project demonstrates the application of cloud-based data access, data preparation, dimensional modelling, statistical investigation and business intelligence to a customer-experience problem.
 
 It showcases analytical thinking, technical implementation and the translation of data into business-facing insights.
 
