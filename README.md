@@ -56,22 +56,9 @@ The project uses Amazon S3 for cloud data storage and Amazon Athena for SQL-base
 
 The architecture below illustrates the implemented workflow at a high level, together with the reporting layer.
 
-```mermaid
-flowchart TD
-    A["Synthetic Source Datasets"] --> B["Amazon S3 - Raw Data"]
-    B --> C["Amazon Athena"]
-    C --> D["SQL Queries and Analysis"]
-    D --> E["Python Data Processing and Analytics"]
-    E --> F["Analytical Outputs"]
-    F --> G["Power BI Semantic Model"]
-    G --> H["Interactive Dashboards"]
-    H --> I["Business Insights and Recommendations"]
-```
-AWS Data Pipeline Architecture Infographic.png
+![AWS Data Pipeline Architecture](docs/aws-data-pipeline.png)
 
-![AWS Data Pipeline Architecture](docs/AWS Data Pipeline Architecture Infographic.png)
-
-[View the full-size AWS data pipeline diagram](docs/AWS Data Pipeline Architecture Infographic.png)
+[View the full-size AWS data pipeline diagram](docs/aws-data-pipeline.png)
 
 ### Pipeline Components
 
