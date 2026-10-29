@@ -1,0 +1,40 @@
+# Airline Customer Experience Analytics
+# Python 3.13 compatible baseline where available.
+# Install from your VS Code project root with:
+#   py -m pip install -r requirements.txt
+
+# Data loading and manipulation
+pandas
+numpy
+openpyxl
+pyarrow
+
+# Visualisation
+matplotlib
+seaborn
+plotly
+
+# Statistics and time-series analysis
+scipy
+statsmodels
+
+# Machine learning
+scikit-learn
+
+# Notebooks and interactive development
+jupyter
+ipykernel
+
+# AWS SDK (useful later for S3/Athena automation)
+boto3
+
+# Optional: direct Python-to-Athena integration.
+# Uncomment/install only when we reach the AWS integration stage:
+# awswrangler
+
+# Optional: additional ML models; install later if needed.
+# xgboost
+# lightgbm
+
+# Optional: forecasting package; install later if needed.
+# prophet
